@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "papaparse": "^5.5.3",
+    "recharts": "^2.15.3"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.3.16"
+  }
+}
