@@ -105,9 +105,15 @@ export const Results = ({ result }: ResultsProps) => {
                 <td className="p-3">{trade.type}</td>
                 <td className="p-3 font-mono text-sm">{trade.from_token}</td>
                 <td className="p-3 font-mono text-sm">{trade.to_token}</td>
-                <td className="p-3">${trade.price_after_60s.toFixed(2)}</td>
+                <td className="p-3">
+                  {typeof trade.price_after_60s === "number" && !isNaN(trade.price_after_60s)
+                    ? `$${trade.price_after_60s.toFixed(2)}`
+                    : "N/A"}
+                </td>
                 <td className={`p-3 font-bold ${trade.profit_or_loss >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-                  ${trade.profit_or_loss.toFixed(2)}
+                  {typeof trade.profit_or_loss === "number" && !isNaN(trade.profit_or_loss)
+                    ? `$${trade.profit_or_loss.toFixed(2)}`
+                    : "N/A"}
                 </td>
               </tr>
             ))}
